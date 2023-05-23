@@ -5,10 +5,11 @@ import { AppRoutingModule } from "../app-routing.module";
 import { AppComponent } from "./main/components/main/app.component";
 import { NotFoundComponent } from "./main/components/not-found/not-found.component";
 import { HeaderComponent } from "./main/components/header/header.component";
+import { WeatherModule } from "./weather/weather.module";
 
 @NgModule({
 	declarations: [AppComponent, NotFoundComponent, HeaderComponent],
-	imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+	imports: [BrowserModule, AppRoutingModule, HttpClientModule, WeatherModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })
