@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CurrentComponent } from './current/current.component';
+import { CurrentComponent } from './components/current/current.component';
 import { ForecastComponent } from './components/forecast/forecast.component';
 
 

@@ -5,16 +5,13 @@ import { WeatherApiService } from 'src/app/services/weather-api.service';
   templateUrl: './forecast.component.html',
   styleUrls: ['./forecast.component.scss']
 })
-export class ForecastComponent implements OnInit{
+export class ForecastComponent implements OnInit {
+
 constructor(
   private weatherApiService: WeatherApiService
 ) {}
+
   ngOnInit(): void {
-   
-  }
-  getWeatherData(_villeForm: { location: string; }){
-    this.weatherApiService
-    .getWeather(_villeForm.location)
-    .subscribe(data=> console.log(data))
+    this.weatherApiService.getWeather().subscribe(data => console.log(data))
   }
 }
