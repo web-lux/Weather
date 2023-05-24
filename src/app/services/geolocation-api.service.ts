@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 	providedIn: "root",
 })
 export class GeolocationApiService {
-	constructor(private http: HttpClient) {}
+	constructor() {}
 
 	getUserGeoLocation(): Promise<
 		GeolocationPosition | { coords: { latitude: number; longitude: number } }
@@ -41,18 +41,4 @@ export class GeolocationApiService {
 			});
 		});
 	}
-
-	// async getLocation(): Promise<any> {
-	// 	const coordsObj: any = await this.getCoords();
-	// 	const url = `https://nominatim.openstreetmap.org/reverse?lat=${coordsObj.coords.latitude}&lon=${coordsObj.coords.longitude}&format=json`;
-	// 	return this.http.get(url);
-	// }
-
-	// getCoords() {
-	// 	return new Promise((resolve, reject) => {
-	// 		navigator.geolocation.getCurrentPosition((pos) => {
-	// 			resolve(pos);
-	// 		});
-	// 	});
-	// }
 }

@@ -1,25 +1,24 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
+import { GeolocationApiService } from "./geolocation-api.service";
 
 @Injectable({
 	providedIn: "root",
 })
 export class WeatherApiService {
-	public userWeather$!: Observable<any>;
-
-	getUserWeather() {
-		return this.userWeather$;
-	}
+	public userWeather$: BehaviorSubject<any> = new BehaviorSubject(
+		this.getWeather(this.locationService.getUserGeoLocation())
+	);
 
 	setUserWeather(arg: any) {
-		this.userWeather$ = arg;
+		this.userWeather$.next(arg);
 	}
 
-	constructor(private http: HttpClient) {}
-
-	// Renvoie une promesse d'observable et prend comme argument une promesse d'objet
-	// contenant les coordonnées dont on souhaite récupérer la météo
+	constructor(
+		private http: HttpClient,
+		private locationService: GeolocationApiService
+	) {}
 
 	async getWeather(
 		coordinates: Promise<
