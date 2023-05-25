@@ -1,5 +1,8 @@
 <form [formGroup]="cityForm">
-<label for="champ">Ville</label>
-<input type="text" id="champ" formControlName="cityName" placeholder="Nom du ville">
-<button type="submit" (click)="onSubmitForm()">Afficher la météo</button>
+    <div class="form">
+        <label for="champ">Ville</label>
+        <input type="text" id="champ" formControlName="cityName" placeholder="Nom du ville">
+        <button type="submit" (click)="onSubmitForm()">Afficher la météo</button>
+       
+    </div>
 </form>

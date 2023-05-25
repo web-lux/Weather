@@ -1,1 +1,137 @@
 <p *ngIf="userWeather">{{ userWeather.latitude }}</p>
+<div class="container">
+    <div class="weather-data">
+        <div class="photo">
+            <!-- l'image change par rapport à l'heure (jour et nuit) -->
+            <img src="../../../../../assets/jour.jpg" alt="" *ngIf="12<14">
+            <img src="../../../../../assets/nuit.jpg" alt="" *ngIf="12>14">
+        </div>
+        <div class="infos">
+            <span class="location">Paris</span>
+            <span class="temperature">25°C</span>
+        </div>
+    </div>
+    <div class="details">
+        <div class="details-infos">
+            <img class="icone" src="../../../../../assets/celsius.png" alt="">
+            <div class="more-infos">
+                <span>Température minimale</span>
+                <span>15°C</span>
+            </div>
+        </div>
+        <div class="details-infos">
+            <img class="icone" src="../../../../../assets/temp-élevé.png" alt="">
+            <div class="more-infos">
+                <span>Température maximale</span>
+                <span>25°C</span>
+            </div>
+        </div>
+        <div class="details-infos">
+            <img class="icone" src="../../../../../assets/vitesse-vent.png" alt="">
+            <div class="more-infos">
+                <span>Vitesse du vent</span>
+                <span>14 km/h </span>
+            </div>
+        </div>
+        <div class="details-infos">
+            <img class="icone" src="../../../../../assets/direction-du-vent .png" alt="">
+            <div class="more-infos">
+                <span>Direction du vent</span>
+                <span> 250</span>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="hours-data">
+        <ul>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+            <li>
+                <div class="hour">
+                    <span>12:00</span>
+                    <img src="../../../../../assets/soleil.png" alt="">
+                    <span>14°C</span>
+                </div>
+            </li>
+
+        </ul>
+
+
+    </div>
+
