@@ -28,7 +28,7 @@ export class WeatherApiService {
 		const coords = await coordinates;
 		let latitude = coords.coords.latitude;
 		let longitude = coords.coords.longitude;
-		const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m`;
+		const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&timezone=auto&daily=temperature_2m_max,temperature_2m_min,weathercode&current_weather=true`;
 		return this.http.get(url);
 	}
 }
