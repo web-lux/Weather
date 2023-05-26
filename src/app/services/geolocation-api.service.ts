@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 
 @Injectable({
 	providedIn: "root",
@@ -8,12 +8,20 @@ import { Observable } from "rxjs";
 export class GeolocationApiService {
 	constructor() {}
 
-	getUserGeoLocation(): Promise<
-		GeolocationPosition | { coords: { latitude: number; longitude: number } }
-	> {
+	currentCity: BehaviorSubject<any> = new BehaviorSubject(
+		this.coordsToCity(this.getUserGeoLocation())
+	);
+
+	setCurrentCity(city: any) {
+		this.currentCity.next(city);
+	}
+
+	getUserGeoLocation(): Promise<any> {
 		return new Promise((resolve) => {
 			navigator.geolocation.getCurrentPosition(
-				(pos) => resolve(pos),
+				async (pos) => {
+					resolve(pos);
+				},
 				() => {
 					resolve({
 						coords: {
@@ -24,6 +32,15 @@ export class GeolocationApiService {
 				}
 			);
 		});
+	}
+
+	async coordsToCity(coordinates: any) {
+		const coords = await coordinates;
+		const latitude = coords.coords.latitude;
+		const longitude = coords.coords.longitude;
+		const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
+		const json = await fetch(url).then((value) => value.json());
+		return json.address.city;
 	}
 
 	async cityToCoords(city: string): Promise<{

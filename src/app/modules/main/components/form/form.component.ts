@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { CurrentComponent } from "src/app/modules/weather/components/current/current.component";
 import { GeolocationApiService } from "src/app/services/geolocation-api.service";
 import { WeatherApiService } from "src/app/services/weather-api.service";
 
@@ -24,6 +23,7 @@ export class FormComponent implements OnInit {
 
 	async onSubmitForm() {
 		const cityName = this.cityForm.value.cityName;
+		this.locationService.setCurrentCity(cityName);
 		this.weatherService.setUserWeather(
 			await this.weatherService.getWeather(
 				this.locationService.cityToCoords(cityName)
