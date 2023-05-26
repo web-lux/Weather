@@ -21,6 +21,7 @@ header {
             text-decoration: none;
             font-size: 1.5rem;
             color: bisque;
+
             &:hover {
                 color: black;
             }
@@ -33,7 +34,6 @@ header {
             justify-content: space-between;
             width: 300px;
         }
-
 
     }
 
@@ -54,18 +54,21 @@ header {
         height: 40px;
         border-color: bisque;
     }
-      ::placeholder {
+
+    ::placeholder {
         color: bisque;
         font-size: 1.2em;
-      } 
-      :focus {
+    }
+
+    :focus {
         outline: none;
-      }
-    
+    }
+
 
     button {
         border-radius: 20px;
         background-color: bisque;
+
         &:hover {
             color: blueviolet;
         }
@@ -112,6 +115,7 @@ header {
             color: bisque;
         }
     }
+
     .details {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -120,36 +124,42 @@ header {
         width: 700px;
         height: 15vh;
     }
+
     .icone {
         width: 50px;
         height: 50px;
     }
+
     .details-infos {
         display: flex;
         justify-content: space-evenly;
-       
+
     }
+
     .more-infos {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+
         span {
             color: bisque;
             font-size: 1.2em;
         }
     }
 }
+
 .hours-data {
     display: flex;
-    
+
     ul {
         list-style: none;
         display: flex;
         justify-content: space-between;
         width: 100%;
-      
+
     }
+
     .hour {
         display: flex;
         flex-direction: column;
@@ -157,14 +167,17 @@ header {
         align-items: center;
         height: 20vh;
     }
+
     img {
         width: 40px;
-     }
-     span {
+    }
+
+    span {
         font-size: 1.5em;
         color: bisque;
-     }
+    }
 }
+
 .forecast {
     width: 100%;
     height: 80vh;
@@ -172,19 +185,101 @@ header {
     justify-content: space-around;
     align-items: center;
     list-style: none;
+
     .daily {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        width: 100%;
         height: 30vh;
+
         img {
             width: 50px;
             height: 50px;
-         }
-         span {
+        }
+
+        span {
             font-size: 1.5em;
             color: bisque;
-         }
+        }
+    }
+}
+
+@media screen and (max-width: 391px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+        margin-bottom: 30px;
+
+        nav {
+            flex-direction: column;
+            margin-left: 0;
+            margin-top: 10px;
+            width: 100%;
+
+
+            ul {
+                display: grid;
+                grid-template-columns: 50% 50%;
+                justify-content: space-between;
+                width: 380px;
+            }
+        }
+
+        .form {
+            justify-content: space-between;
+            align-items: center;
+            width: 380px;
+        }
+    }
+
+    .container {
+        flex-direction: column;
+        width: 380px;
+        margin-top: 20px;
+        height: auto;
+
+        .weather-data {
+            flex-direction: column;
+
+            .photo img {
+                margin-left: 50px;
+            }
+
+        }
+
+        .details {
+            width: auto;
+            margin-top: 25px;
+            gap: 25px;
+
+            .details-infos {
+                justify-content: space-between;
+                align-items: center;
+
+
+                .text {
+                    display: none;
+                }
+            }
+        }
+    }
+    .hours-data {
+            width: auto;
+            margin-top: 25px;
+        ul {
+            flex-direction: column;
+        }
+        .hour {
+           flex-direction: row;
+           width: 300px;
+           justify-content: space-between;
+           height: 50px;
+        }
+    }
+    .forecast {
+       flex-direction: column; 
+       
     }
 }
