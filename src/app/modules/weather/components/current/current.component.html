@@ -3,12 +3,12 @@
 		<div class="photo">
 			<!-- l'image change par rapport à l'heure (jour et nuit) -->
 			<img
-				src="../../../../../assets/jour.jpg"
+				src="../../../../../assets/day.jpg"
 				alt=""
 				*ngIf="currentWeather.current_weather.is_day === 1"
 			/>
 			<img
-				src="../../../../../assets/nuit.jpg"
+				src="../../../../../assets/night.jpg"
 				alt=""
 				*ngIf="currentWeather.current_weather.is_day === 0"
 			/>
@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		<div class="details-infos">
-			<img class="icone" src="../../../../../assets/vitesse-vent.png" alt="" />
+			<img class="icone" src="../../../../../assets/wind.png" alt="" />
 			<div class="more-infos">
 				<span>Vitesse du vent</span>
 				<span>{{ currentWeather.current_weather.windspeed }} km/h </span>
@@ -38,7 +38,7 @@
 		<div class="details-infos">
 			<img
 				class="icone"
-				src="../../../../../assets/direction-du-vent .png"
+				src="../../../../../assets/wind-direction.png"
 				alt=""
 			/>
 			<div class="more-infos">
