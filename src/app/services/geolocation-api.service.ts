@@ -1,6 +1,5 @@
-import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
 	providedIn: "root",
@@ -8,15 +7,17 @@ import { BehaviorSubject, Observable } from "rxjs";
 export class GeolocationApiService {
 	constructor() {}
 
-	currentCity: BehaviorSubject<any> = new BehaviorSubject(
+	citySubject$: BehaviorSubject<Promise<string>> = new BehaviorSubject(
 		this.coordsToCity(this.getUserGeoLocation())
 	);
 
-	setCurrentCity(city: any) {
-		this.currentCity.next(city);
+	setCitySubject(city: Promise<string>) {
+		this.citySubject$.next(city);
 	}
 
-	getUserGeoLocation(): Promise<any> {
+	getUserGeoLocation(): Promise<
+		GeolocationPosition | { coords: { latitude: number; longitude: number } }
+	> {
 		return new Promise((resolve) => {
 			navigator.geolocation.getCurrentPosition(
 				async (pos) => {
@@ -34,12 +35,16 @@ export class GeolocationApiService {
 		});
 	}
 
-	async coordsToCity(coordinates: any) {
+	async coordsToCity(
+		coordinates: Promise<
+			GeolocationPosition | { coords: { latitude: number; longitude: number } }
+		>
+	): Promise<string> {
 		const coords = await coordinates;
 		const latitude = coords.coords.latitude;
 		const longitude = coords.coords.longitude;
 		const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
-		const json = await fetch(url).then((value) => value.json());
+		const json = await fetch(url).then((res) => res.json());
 		return json.address.city;
 	}
 
@@ -48,8 +53,7 @@ export class GeolocationApiService {
 	}> {
 		return new Promise(async (resolve) => {
 			const url = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=fr&format=json`;
-			const obj = await fetch(url);
-			const json = await obj.json();
+			const json = await fetch(url).then((res) => res.json());
 			resolve({
 				coords: {
 					latitude: json.results[0].latitude,

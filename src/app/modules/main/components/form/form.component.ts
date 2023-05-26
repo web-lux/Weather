@@ -21,11 +21,11 @@ export class FormComponent implements OnInit {
 		});
 	}
 
-	async onSubmitForm() {
+	onSubmitForm() {
 		const cityName = this.cityForm.value.cityName;
-		this.locationService.setCurrentCity(cityName);
+		this.locationService.setCitySubject(cityName);
 		this.weatherService.setUserWeather(
-			await this.weatherService.getWeather(
+			this.weatherService.getWeather(
 				this.locationService.cityToCoords(cityName)
 			)
 		);
