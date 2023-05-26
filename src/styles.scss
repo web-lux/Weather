@@ -1,285 +1,235 @@
 * {
-    background-color: blueviolet;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
+:root {
+	font-size: 16px;
+}
+
+body {
+	background-color: blueviolet;
+}
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 85px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 85px;
 
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        margin-left: 50px;
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		margin-left: 50px;
 
-        a {
-            text-decoration: none;
-            font-size: 1.5rem;
-            color: bisque;
+		ul {
+			list-style: none;
+			display: flex;
+			justify-content: space-between;
+			width: 300px;
+		}
 
-            &:hover {
-                color: black;
-            }
+		a {
+			text-decoration: none;
+			font-size: 1.5rem;
+			color: bisque;
 
-        }
+			&:hover {
+				color: black;
+			}
+		}
+	}
 
-        ul {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            width: 300px;
-        }
+	form {
+		margin-right: 50px;
+		display: flex;
+		justify-content: space-around;
+		width: 600px;
+	}
 
-    }
+	label {
+		visibility: hidden;
+	}
 
-    .form {
-        margin-right: 50px;
-        display: flex;
-        justify-content: space-around;
-        width: 600px;
-    }
+	input {
+		border-radius: 20px;
+		width: 200px;
+		height: 40px;
+		border-color: bisque;
+	}
 
-    label {
-        visibility: hidden;
-    }
+	::placeholder {
+		color: bisque;
+		font-size: 1rem;
+	}
 
-    input {
-        border-radius: 20px;
-        width: 200px;
-        height: 40px;
-        border-color: bisque;
-    }
+	:focus {
+		outline: none;
+	}
 
-    ::placeholder {
-        color: bisque;
-        font-size: 1.2em;
-    }
+	button {
+		border-radius: 20px;
+		background-color: bisque;
+		border: none;
 
-    :focus {
-        outline: none;
-    }
-
-
-    button {
-        border-radius: 20px;
-        background-color: bisque;
-
-        &:hover {
-            color: blueviolet;
-        }
-    }
+		&:hover {
+			color: blueviolet;
+		}
+	}
 }
 
 .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 40vh;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	height: 40vh;
+	color: bisque;
 
+	.weather-data {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 300px;
+		gap: 60px;
 
-    .weather-data {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 300px;
+		.photo img {
+			width: 300px;
+			height: 200px;
+			border-radius: 15px;
+			box-shadow: black; // TODO: Repasser ici
+		}
 
-        .photo img {
-            width: 300px;
-            height: 200px;
-            border-radius: 15px;
-            box-shadow: black;
-            margin-right: 60px;
-        }
+		.infos {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 
-        .infos {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            height: 10vh;
-        }
+		.location,
+		.temperature {
+			font-size: 2rem;
+		}
+	}
 
-        .location {
-            font-size: 2em;
-            color: bisque;
-        }
+	.details {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: space-evenly;
+		align-items: center;
+		width: 700px;
+		height: 15vh;
+	}
 
-        .temperature {
-            font-size: 2.2em;
-            color: bisque;
-        }
-    }
+	.icone {
+		width: 50px;
+		height: 50px;
+	}
 
-    .details {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 700px;
-        height: 15vh;
-    }
+	.details-infos {
+		display: flex;
+		justify-content: space-evenly;
+	}
 
-    .icone {
-        width: 50px;
-        height: 50px;
-    }
-
-    .details-infos {
-        display: flex;
-        justify-content: space-evenly;
-
-    }
-
-    .more-infos {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-
-        span {
-            color: bisque;
-            font-size: 1.2em;
-        }
-    }
-}
-
-.hours-data {
-    display: flex;
-
-    ul {
-        list-style: none;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-
-    }
-
-    .hour {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        height: 20vh;
-    }
-
-    img {
-        width: 40px;
-    }
-
-    span {
-        font-size: 1.5em;
-        color: bisque;
-    }
+	.more-infos {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		color: bisque;
+		font-size: 1.2em;
+	}
 }
 
 .forecast {
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
 
-    .daily {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        height: 30vh;
+	.daily {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		height: 30vh;
 
-        img {
-            width: 50px;
-            height: 50px;
-        }
+		img {
+			width: 50px;
+			height: 50px;
+		}
 
-        span {
-            font-size: 1.5em;
-            color: bisque;
-        }
-    }
+		span {
+			font-size: 1.5em;
+			color: bisque;
+		}
+	}
 }
 
 @media screen and (max-width: 391px) {
-    header {
-        flex-direction: column;
-        padding: 10px;
-        margin-bottom: 30px;
+	header {
+		flex-direction: column;
+		padding: 10px;
+		margin-bottom: 30px;
 
-        nav {
-            flex-direction: column;
-            margin-left: 0;
-            margin-top: 10px;
-            width: 100%;
+		nav {
+			flex-direction: column;
+			margin-left: 0;
+			margin-top: 10px;
+			width: 100%;
 
+			ul {
+				display: grid;
+				grid-template-columns: 50% 50%;
+				justify-content: space-between;
+				width: 380px;
+			}
+		}
 
-            ul {
-                display: grid;
-                grid-template-columns: 50% 50%;
-                justify-content: space-between;
-                width: 380px;
-            }
-        }
+		.form {
+			justify-content: space-between;
+			align-items: center;
+			width: 380px;
+		}
+	}
 
-        .form {
-            justify-content: space-between;
-            align-items: center;
-            width: 380px;
-        }
-    }
+	.container {
+		flex-direction: column;
+		width: 380px;
+		margin-top: 20px;
+		height: auto;
 
-    .container {
-        flex-direction: column;
-        width: 380px;
-        margin-top: 20px;
-        height: auto;
+		.weather-data {
+			flex-direction: column;
 
-        .weather-data {
-            flex-direction: column;
+			.photo img {
+				margin-left: 50px;
+			}
+		}
 
-            .photo img {
-                margin-left: 50px;
-            }
+		.details {
+			width: auto;
+			margin-top: 25px;
+			gap: 25px;
 
-        }
+			.details-infos {
+				justify-content: space-between;
+				align-items: center;
 
-        .details {
-            width: auto;
-            margin-top: 25px;
-            gap: 25px;
+				.text {
+					display: none;
+				}
+			}
+		}
+	}
 
-            .details-infos {
-                justify-content: space-between;
-                align-items: center;
-
-
-                .text {
-                    display: none;
-                }
-            }
-        }
-    }
-    .hours-data {
-            width: auto;
-            margin-top: 25px;
-        ul {
-            flex-direction: column;
-        }
-        .hour {
-           flex-direction: row;
-           width: 300px;
-           justify-content: space-between;
-           height: 50px;
-        }
-    }
-    .forecast {
-       flex-direction: column; 
-       
-    }
+	.forecast {
+		flex-direction: column;
+	}
 }
