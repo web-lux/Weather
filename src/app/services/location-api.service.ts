@@ -4,7 +4,7 @@ import { BehaviorSubject } from "rxjs";
 @Injectable({
 	providedIn: "root",
 })
-export class GeolocationApiService {
+export class LocationApiService {
 	constructor() {}
 
 	citySubject$: BehaviorSubject<Promise<string>> = new BehaviorSubject(

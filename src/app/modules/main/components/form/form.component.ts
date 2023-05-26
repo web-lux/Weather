@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { GeolocationApiService } from "src/app/services/geolocation-api.service";
+import { LocationApiService } from "src/app/services/location-api.service";
 import { WeatherApiService } from "src/app/services/weather-api.service";
 
 @Component({
@@ -13,7 +13,7 @@ export class FormComponent implements OnInit {
 	constructor(
 		private formBuilder: FormBuilder,
 		private weatherService: WeatherApiService,
-		private locationService: GeolocationApiService
+		private locationService: LocationApiService
 	) {}
 	ngOnInit(): void {
 		this.cityForm = this.formBuilder.group({

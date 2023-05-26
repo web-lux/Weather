@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
-import { GeolocationApiService } from "./geolocation-api.service";
+import { LocationApiService } from "./location-api.service";
 
 @Injectable({
 	providedIn: "root",
@@ -18,7 +18,7 @@ export class WeatherApiService {
 
 	constructor(
 		private http: HttpClient,
-		private locationService: GeolocationApiService
+		private locationService: LocationApiService
 	) {}
 
 	async getWeather(

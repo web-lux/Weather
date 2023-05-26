@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import Weather from "src/app/interface/Weather";
-import { GeolocationApiService } from "src/app/services/geolocation-api.service";
+import { LocationApiService } from "src/app/services/location-api.service";
 import { WeatherApiService } from "src/app/services/weather-api.service";
 
 @Component({
@@ -9,7 +9,7 @@ import { WeatherApiService } from "src/app/services/weather-api.service";
 })
 export class CurrentComponent implements OnInit {
 	constructor(
-		private geolocationService: GeolocationApiService,
+		private locationService: LocationApiService,
 		private weatherService: WeatherApiService
 	) {}
 
@@ -27,7 +27,7 @@ export class CurrentComponent implements OnInit {
 				);
 			});
 		});
-		this.geolocationService.citySubject$.subscribe(
+		this.locationService.citySubject$.subscribe(
 			async (res: Promise<string>) => {
 				this.currentCity = await res;
 			}
