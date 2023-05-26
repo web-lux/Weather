@@ -54,12 +54,16 @@ export class LocationApiService {
 		return new Promise(async (resolve) => {
 			const url = `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1&language=fr&format=json`;
 			const json = await fetch(url).then((res) => res.json());
-			resolve({
-				coords: {
-					latitude: json.results[0].latitude,
-					longitude: json.results[0].longitude,
-				},
-			});
+			if (json.results) {
+				resolve({
+					coords: {
+						latitude: json.results[0].latitude,
+						longitude: json.results[0].longitude,
+					},
+				});
+			} else {
+				alert("Ville non reconnue. Merci d'en vérifier l'ortographe.");
+			}
 		});
 	}
 }

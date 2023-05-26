@@ -21,13 +21,13 @@ export class FormComponent implements OnInit {
 		});
 	}
 
-	onSubmitForm() {
+	async onSubmitForm() {
 		const cityName = this.cityForm.value.cityName;
-		this.locationService.setCitySubject(cityName);
-		this.weatherService.setUserWeather(
-			this.weatherService.getWeather(
-				this.locationService.cityToCoords(cityName)
-			)
-		);
+		const cityCoords = await this.locationService.cityToCoords(cityName);
+		if (cityCoords.coords) {
+			this.weatherService.setUserWeather(
+				this.weatherService.getWeather(cityCoords)
+			);
+		}
 	}
 }

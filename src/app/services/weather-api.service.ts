@@ -22,9 +22,12 @@ export class WeatherApiService {
 	) {}
 
 	async getWeather(
-		coordinates: Promise<
-			GeolocationPosition | { coords: { latitude: number; longitude: number } }
-		>
+		coordinates:
+			| Promise<
+					| GeolocationPosition
+					| { coords: { latitude: number; longitude: number } }
+			  >
+			| { coords: { latitude: number; longitude: number } }
 	): Promise<Observable<any>> {
 		const coords = await coordinates;
 		let latitude = coords.coords.latitude;
