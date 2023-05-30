@@ -43,7 +43,14 @@
 			/>
 			<div class="more-infos">
 				<span class="text">Direction du vent</span>
-				<span>{{ currentWeather.current_weather.winddirection }}</span>
+				<img
+					src="../../../../../assets/arrow.png"
+					alt=""
+					[style.transform]="
+						'rotate(' + currentWeather.current_weather.winddirection + 'deg)'
+					"
+				/>
+				<span>{{ currentWeather.current_weather.winddirection }} °</span>
 			</div>
 		</div>
 	</div>
