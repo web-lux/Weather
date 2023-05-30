@@ -34,7 +34,7 @@ export class ForecastComponent implements OnInit {
 		} else if (weatherCode === 1 || weatherCode === 2 || weatherCode === 3) {
 			return "../../../../../assets/partiellement-ensoleille.png";
 		} else if (weatherCode === 45 || weatherCode === 48) {
-			return "../../../../../assets/sunny.png"; // TODO: brouillard
+			return "../../../../../assets/brouillard.png";
 		} else if (weatherCode === 51 || weatherCode === 53 || weatherCode === 55) {
 			return "../../../../../assets/drizzle.png";
 		} else if (weatherCode === 56 || weatherCode === 57) {
