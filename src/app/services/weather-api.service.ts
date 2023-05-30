@@ -37,36 +37,34 @@ export class WeatherApiService {
 	}
 
 	weatherCodeIntoString(weatherCode: number): string {
-		switch (weatherCode) {
-			case 0:
-				return "Ciel dégagé";
-			case 1 || 2 || 3:
-				return "Partiellement nuageux";
-			case 45 | 48:
-				return "Brouillard";
-			case 51 | 53 | 55:
-				return "Bruine";
-			case 56 | 57:
-				return "Bruine glacial";
-			case 61 | 63 | 65:
-				return "Pluie";
-			case 66 | 67:
-				return "Pluie glaciale";
-			case 71 | 73 | 75:
-				return "Neige";
-			case 77:
-				return "Grêlons";
-			case 80 | 81 | 82:
-				return "Averse";
-			case 85 | 86:
-				return "Chute de neige";
-			case 95:
-				return "Orage";
-			case 96 | 99:
-				return "Orage avec grêle";
-
-			default:
-				return "Météo inconnue";
+		if (weatherCode === 0) {
+			return "Ciel dégagé";
+		} else if (weatherCode === 1 || weatherCode === 2 || weatherCode === 3) {
+			return "Partiellement nuageux";
+		} else if (weatherCode === 45 || weatherCode === 48) {
+			return "Brouillard";
+		} else if (weatherCode === 51 || weatherCode === 53 || weatherCode === 55) {
+			return "Bruine";
+		} else if (weatherCode === 56 || weatherCode === 57) {
+			return "Bruine glacial";
+		} else if (weatherCode === 61 || weatherCode === 63 || weatherCode === 65) {
+			return "Pluie";
+		} else if (weatherCode === 66 || weatherCode === 67) {
+			return "Pluie glaciale";
+		} else if (weatherCode === 71 || weatherCode === 73 || weatherCode === 75) {
+			return "Neige";
+		} else if (weatherCode === 77) {
+			return "Grêlons";
+		} else if (weatherCode === 80 || weatherCode === 81 || weatherCode === 82) {
+			return "Averse";
+		} else if (weatherCode === 85 || weatherCode === 86) {
+			return "Chute de neige";
+		} else if (weatherCode === 95) {
+			return "Orage";
+		} else if (weatherCode === 96 || weatherCode === 99) {
+			return "Orage avec grêle";
+		} else {
+			return "Météo inconnue";
 		}
 	}
 }

@@ -1,53 +1,11 @@
-<div >
-    <ul class="forecast">
-        <li>
-            <div class="daily">
-                <span>Lundi</span>
-                <img src="../../../../../assets/thunderstorm.png" alt="">
-                <span>Température</span>
-            </div>
-        </li>
-        <li>
-            <div class="daily">
-                <span>Mardi </span>
-                <img src="../../../../../assets/thunderstorm.png" alt="">
-                <span>Température</span>
-            </div>
-        </li>
-        <li>
-            <div class="daily">
-                <span>Mercredi</span>
-                <img src="../../../../../assets/thunderstorm.png" alt="">
-                <span>Température</span>
-            </div>
-        </li>
-        <li>
-            <div class="daily">
-                <span>Jeudi</span>
-                <img src="../../../../../assets/thunderstorm-heavy.png" alt="">
-                <span>Température</span>
-            </div>
-        </li>
-        <li>
-            <div class="daily">
-                <span>Vendredi</span>
-                <img src="../../../../../assets/thunderstorm-heavy.png" alt="">
-                <span>Température</span>
-            </div>
-        </li>
-        <li>
-            <div class="daily">
-                <span>Samedi</span>
-                <img src="../../../../../assets/thunderstorm-heavy.png" alt="">
-                <span>Température</span>
-            </div>
-        </li>
-        <li>
-            <div class="daily">
-                <span>Dimanche</span>
-                <img src="../../../../../assets/thunderstorm-heavy.png" alt="">
-                <span>Température</span>
-            </div>
-        </li>
-    </ul>
+<div>
+	<ul class="forecast">
+		<li *ngFor="let day of dailyWeather; index as i" class="daily">
+			<span>{{ day.time }}</span>
+			<img src="{{ getImagePath(day.weathercode) }}" alt="" />
+			<span>{{ getWeatherString(day.weathercode) }}</span>
+			<span>{{ day.temperature_2m_min }}</span>
+			<span>{{ day.temperature_2m_max }}</span>
+		</li>
+	</ul>
 </div>
