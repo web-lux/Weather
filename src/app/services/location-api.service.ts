@@ -45,7 +45,11 @@ export class LocationApiService {
 		const longitude = coords.coords.longitude;
 		const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
 		const json = await fetch(url).then((res) => res.json());
-		return json.address.city;
+		if (json.address.city) {
+			return json.address.city;
+		} else {
+			return json.address.town;
+		}
 	}
 
 	async cityToCoords(city: string): Promise<{
