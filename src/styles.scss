@@ -1,274 +1,401 @@
+// * {
+// 	font-family: Verdana, Geneva, Tahoma, sans-serif;
+// 	margin: 0;
+// 	padding: 0;
+// 	box-sizing: border-box;
+// }
+
+// :root {
+// 	font-size: 16px;
+// }
+
+// body {
+// 	background-color: blueviolet;
+// }
+
+// header {
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// 	min-height: 85px;
+
+// 	nav {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		align-items: center;
+// 		width: 100%;
+// 		margin-left: 50px;
+
+// 		ul {
+// 			list-style: none;
+// 			display: flex;
+// 			justify-content: space-between;
+// 			width: 300px;
+// 		}
+
+// 		a {
+// 			text-decoration: none;
+// 			font-size: 1.5rem;
+// 			color: bisque;
+
+// 			&:hover {
+// 				color: black;
+// 			}
+// 		}
+// 	}
+
+// 	form {
+// 		margin-right: 50px;
+// 		display: flex;
+// 		justify-content: space-around;
+// 		width: 600px;
+// 	}
+
+// 	label {
+// 		visibility: hidden;
+// 	}
+
+// 	input {
+// 		border-radius: 20px;
+// 		width: 200px;
+// 		height: 40px;
+// 		border-color: bisque;
+// 	}
+
+// 	::placeholder {
+// 		color: bisque;
+// 		font-size: 1rem;
+// 	}
+
+// 	:focus {
+// 		outline: none;
+// 	}
+
+// 	button {
+// 		border-radius: 20px;
+// 		background-color: bisque;
+// 		border: none;
+
+// 		&:hover {
+// 			color: blueviolet;
+// 		}
+// 	}
+// }
+
+// .container {
+// 	display: flex;
+// 	justify-content: space-around;
+// 	align-items: center;
+// 	width: 100%;
+// 	height: 40vh;
+// 	color: bisque;
+
+// 	.weather-data {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		align-items: center;
+// 		width: 300px;
+// 		gap: 60px;
+
+// 		.photo img {
+// 			width: 300px;
+// 			height: 200px;
+// 			border-radius: 15px;
+// 			box-shadow: black; // TODO: Repasser ici
+// 		}
+
+// 		.infos {
+// 			display: flex;
+// 			flex-direction: column;
+// 			align-items: center;
+// 		}
+
+// 		.location,
+// 		.temperature {
+// 			font-size: 2rem;
+// 		}
+// 	}
+
+// 	.details {
+// 		display: grid;
+// 		grid-template-columns: 1fr 1fr;
+// 		justify-content: space-evenly;
+// 		align-items: center;
+// 		width: 700px;
+// 		height: 15vh;
+// 	}
+
+// 	.icone {
+// 		width: 50px;
+// 		height: 50px;
+// 	}
+
+// 	.details-infos {
+// 		display: flex;
+// 		justify-content: space-evenly;
+// 		padding: 20px;
+// 	}
+
+// 	.more-infos {
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: space-between;
+// 		align-items: center;
+// 		color: bisque;
+// 		font-size: 1.2em;
+// 	}
+// }
+
+// .forecast {
+// 	width: 100%;
+// 	display: flex;
+// 	justify-content: space-around;
+// 	align-items: center;
+// 	list-style: none;
+// 	margin-top: 30px;
+
+// 	.daily {
+// 		display: flex;
+// 		flex-direction: column;
+// 		align-items: center;
+// 		justify-content: space-between;
+// 		width: 100%;
+// 		height: 30vh;
+
+// 		img {
+// 			width: 50px;
+// 			height: 50px;
+// 		}
+
+// 		span {
+// 			font-size: 1.5em;
+// 			color: bisque;
+// 		}
+// 	}
+// }
+
+// @media screen and (max-width: 391px) {
+// 	header {
+// 		flex-direction: column;
+// 		justify-content: space-around;
+// 		height: 40vh;
+
+// 		nav {
+// 			flex-direction: column;
+// 			gap: 20px;
+// 			margin: 0px 40px 0px 0px;
+
+// 			ul {
+// 				display: flex;
+// 				justify-content: space-between;
+// 			}
+// 		}
+
+// 		form {
+// 			width: auto;
+// 			gap: 20px;
+// 			input {
+// 				width: auto;
+// 			}
+// 		}
+// 	}
+
+// 	.container {
+// 		flex-direction: column;
+// 		width: 380px;
+// 		margin-top: 20px;
+// 		height: auto;
+
+// 		.weather-data {
+// 			flex-direction: column;
+// 		}
+
+// 		.details {
+// 			width: auto;
+// 			margin-top: 25px;
+// 			gap: 25px;
+
+// 			.details-infos {
+// 				justify-content: space-between;
+// 				align-items: center;
+// 				padding: 15px;
+
+// 				.text {
+// 					display: none;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	.forecast {
+// 		flex-direction: column;
+// 		gap: 25px;
+// 	}
+// }
+// @media only screen and (min-width: 768px) and (max-width: 991px) {
+// 	header {
+// 		padding: 10px;
+// 		margin-bottom: 30px;
+// 	}
+
+// 	ul {
+// 		width: 100%;
+// 	}
+
+// 	form {
+// 		width: 100%;
+// 	}
+
+// 	.container {
+// 		width: 100%;
+// 		height: auto;
+// 		margin: 50px 0px 0px 150px;
+// 		flex-direction: column;
+// 		gap: 50px;
+
+// 		.details {
+// 			gap: 50px;
+// 		}
+// 	}
+// 	.forecast {
+// 		flex-direction: column;
+// 		gap: 25px;
+
+// 		.daily {
+// 			flex-direction: row;
+// 			gap: 25px;
+// 		}
+// 	}
+// }
+
 * {
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	box-sizing: border-box;
 }
 
-:root {
-	font-size: 16px;
+ul {
+	list-style-type: none;
 }
 
-body {
-	background-color: blueviolet;
+a {
+	color: inherit;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+a,
+button,
+span,
+label {
+	font-family: "Montserrat", sans-serif;
+}
+
+span {
+	line-height: 150%;
 }
 
 header {
+	padding: 20px;
 	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
 	justify-content: space-between;
 	align-items: center;
-	min-height: 85px;
+	min-height: 50px;
+	background-color: #fbfbfb;
 
-	nav {
+	.logo {
+		color: #181739;
+		font-family: "Fjalla One", sans-serif;
+		font-size: 26px;
+	}
+
+	.nav {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-		margin-left: 50px;
-
-		ul {
-			list-style: none;
-			display: flex;
-			justify-content: space-between;
-			width: 300px;
-		}
-
-		a {
-			text-decoration: none;
-			font-size: 1.5rem;
-			color: bisque;
-
-			&:hover {
-				color: black;
-			}
-		}
+		gap: 40px;
 	}
 
 	form {
-		margin-right: 50px;
 		display: flex;
-		justify-content: space-around;
-		width: 600px;
-	}
+		align-items: center;
+		gap: 10px;
 
-	label {
-		visibility: hidden;
-	}
+		input,
+		button {
+			padding: 4px 8px;
+			border-radius: 25px;
+		}
 
-	input {
-		border-radius: 20px;
-		width: 200px;
-		height: 40px;
-		border-color: bisque;
-	}
+		input {
+			border: solid 1px #d8d8d8;
+		}
 
-	::placeholder {
-		color: bisque;
-		font-size: 1rem;
-	}
+		label {
+			display: none;
+		}
 
-	:focus {
-		outline: none;
-	}
-
-	button {
-		border-radius: 20px;
-		background-color: bisque;
-		border: none;
-
-		&:hover {
-			color: blueviolet;
+		button {
+			border: none;
+			background-color: #181739;
+			color: white;
 		}
 	}
 }
 
 .container {
 	display: flex;
-	justify-content: space-around;
+	padding: 20px;
+	justify-content: space-evenly;
 	align-items: center;
-	width: 100%;
-	height: 40vh;
-	color: bisque;
 
 	.weather-data {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		width: 300px;
-		gap: 60px;
+		gap: 20px;
 
-		.photo img {
-			width: 300px;
+		.photo {
+			width: 200px;
 			height: 200px;
-			border-radius: 15px;
-			box-shadow: black; // TODO: Repasser ici
+			overflow: hidden;
+
+			img {
+				max-width: 100%;
+			}
 		}
 
 		.infos {
 			display: flex;
 			flex-direction: column;
-			align-items: center;
-		}
 
-		.location,
-		.temperature {
-			font-size: 2rem;
+			.location {
+				font-size: 32px;
+			}
+
+			.temperature {
+				font-size: 20px;
+			}
 		}
 	}
 
 	.details {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		justify-content: space-evenly;
-		align-items: center;
-		width: 700px;
-		height: 15vh;
-	}
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 20px;
 
-	.icone {
-		width: 50px;
-		height: 50px;
-	}
+		.details-infos {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 
-	.details-infos {
-		display: flex;
-		justify-content: space-evenly;
-		padding: 20px;
-	}
-
-	.more-infos {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		color: bisque;
-		font-size: 1.2em;
-	}
-}
-
-.forecast {
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	list-style: none;
-	margin-top: 30px;
-
-	.daily {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
-		width: 100%;
-		height: 30vh;
+			.more-infos {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+		}
 
 		img {
-			width: 50px;
-			height: 50px;
-		}
-
-		span {
-			font-size: 1.5em;
-			color: bisque;
-		}
-	}
-}
-
-@media screen and (max-width: 391px) {
-	header {
-		flex-direction: column;
-		justify-content: space-around;
-		height: 40vh;
-		
-		
-
-		nav {
-			flex-direction: column;
-			gap: 20px;
-			margin:0px 40px 0px 0px;
-			
-
-			ul {
-				display: flex;
-				justify-content: space-between;
-			}
-		}
-
-		form {
-			width: auto;
-			gap: 20px;
-			input {
-				width: auto;
-			}
-		}
-	}
-
-	.container {
-		flex-direction: column;
-		width: 380px;
-		margin-top: 20px;
-		height: auto;
-
-		.weather-data {
-			flex-direction: column;
-
-		}
-
-		.details {
-			width: auto;
-			margin-top: 25px;
-			gap: 25px;
-
-			.details-infos {
-				justify-content: space-between;
-				align-items: center;
-				padding: 15px;
-
-				.text {
-					display: none;
-				}
-			}
-		}
-	}
-
-	.forecast {
-		flex-direction: column;
-		gap: 25px;
-	}
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-	header {
-		padding: 10px;
-		margin-bottom: 30px;
-	}
-
-	ul {
-		width: 100%;
-	}
-
-	form {
-		width: 100%;
-	}
-
-	.container {
-		width: 100%;
-		height: auto;
-		margin: 50px 0px 0px 150px;
-		flex-direction: column;
-		gap: 50px;
-		
-		.details {
-		 gap: 50px;
-		}
-	}
-	.forecast {
-		flex-direction: column;
-		gap: 25px;
-		
-		.daily {
-			flex-direction: row;
-			gap: 25px;
-			
+			max-width: 35px;
 		}
 	}
 }
