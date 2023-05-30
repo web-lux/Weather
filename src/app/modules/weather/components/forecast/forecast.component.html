@@ -1,11 +1,31 @@
-<div>
+<!-- <div>
 	<ul class="forecast">
 		<li *ngFor="let day of dailyWeather; index as i" class="daily">
 			<span>{{ day.time }}</span>
-			<img src="{{ getImagePath(day.weathercode) }}" alt="" />
+			<img src="{{ getImage(day.weathercode) }}" alt="" />
 			<span>{{ getWeatherString(day.weathercode) }}</span>
 			<span>{{ day.temperature_2m_min }}</span>
 			<span>{{ day.temperature_2m_max }}</span>
 		</li>
 	</ul>
-</div>
+</div> -->
+
+<ul class="forecast glass">
+	<li *ngFor="let day of dailyWeather; index as i">
+		<span class="time">{{ day.time }}</span>
+
+		<div class="meteo">
+			<img src="{{ getImage(day.weathercode) }}" alt="" />
+		</div>
+
+		<div class="temperature">
+			<span class="label">Température minimum</span>
+			<span>{{ day.temperature_2m_min }}</span>
+		</div>
+
+		<div class="temperature">
+			<span class="label">Température maximum</span>
+			<span>{{ day.temperature_2m_max }}</span>
+		</div>
+	</li>
+</ul>

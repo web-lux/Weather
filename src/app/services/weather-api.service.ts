@@ -39,19 +39,33 @@ export class WeatherApiService {
 	weatherCodeIntoString(weatherCode: number): string {
 		if (weatherCode === 0) {
 			return "Ciel dégagé";
-		} else if (weatherCode === 1 || weatherCode === 2 || weatherCode === 3) {
-			return "Partiellement nuageux";
+		} else if (weatherCode === 1) {
+			return "Légéremment nuageux";
+		} else if (weatherCode === 2) {
+			return "Plutôt nuageux";
+		} else if (weatherCode === 3) {
+			return "Nuageux";
 		} else if (weatherCode === 45 || weatherCode === 48) {
-			return "Brouillard";
-		} else if (weatherCode === 51 || weatherCode === 53 || weatherCode === 55) {
+			return "Brumeux";
+		} else if (weatherCode === 51) {
+			return "Bruine légère";
+		} else if (weatherCode === 53) {
 			return "Bruine";
-		} else if (weatherCode === 56 || weatherCode === 57) {
-			return "Bruine glacial";
-		} else if (weatherCode === 61 || weatherCode === 63 || weatherCode === 65) {
+		} else if (weatherCode === 55) {
+			return "Bruine intense";
+		} else if (weatherCode === 56) {
+			return "Bruine glaciale légère";
+		} else if (weatherCode === 57) {
+			return "Bruine glaciale dense";
+		} else if (weatherCode === 61) {
+			return "Légère pluie";
+		} else if (weatherCode === 63) {
 			return "Pluie";
+		} else if (weatherCode === 65) {
+			return "Pluie intense";
 		} else if (weatherCode === 66 || weatherCode === 67) {
 			return "Pluie glaciale";
-		} else if (weatherCode === 71 || weatherCode === 73 || weatherCode === 75) {
+		} else if (weatherCode === 71) {
 			return "Neige";
 		} else if (weatherCode === 77) {
 			return "Grêlons";
@@ -65,6 +79,42 @@ export class WeatherApiService {
 			return "Orage avec grêle";
 		} else {
 			return "Météo inconnue";
+		}
+	}
+
+	getImagePath(weatherCode: number) {
+		if (weatherCode === 0) {
+			return "../../../../../assets/clear.png";
+		} else if (weatherCode === 1) {
+			return "../../../../../assets/mainly-clear.png";
+		} else if (weatherCode === 2) {
+			return "../../../../../assets/partly-cloudy.png";
+		} else if (weatherCode === 3) {
+			return "../../../../../assets/overcast.png";
+		} else if (weatherCode === 45 || weatherCode === 48) {
+			return "../../../../../assets/fog.png";
+		} else if (weatherCode === 51 || weatherCode === 53 || weatherCode === 55) {
+			return "../../../../../assets/drizzle.png";
+		} else if (weatherCode === 56 || weatherCode === 57) {
+			return "../../../../../assets/rain.png";
+		} else if (weatherCode === 61 || weatherCode === 63 || weatherCode === 65) {
+			return "../../../../../assets/rain.png";
+		} else if (weatherCode === 66 || weatherCode === 67) {
+			return "../../../../../assets/rain.png";
+		} else if (weatherCode === 71 || weatherCode === 73 || weatherCode === 75) {
+			return "../../../../../assets/snow.png";
+		} else if (weatherCode === 77) {
+			return "../../../../../assets/snow.png";
+		} else if (weatherCode === 80 || weatherCode === 81 || weatherCode === 82) {
+			return "../../../../../assets/rain.png";
+		} else if (weatherCode === 85 || weatherCode === 86) {
+			return "../../../../../assets/snow.png";
+		} else if (weatherCode === 95) {
+			return "../../../../../assets/thunderstorm.png";
+		} else if (weatherCode === 96 || weatherCode === 99) {
+			return "../../../../../assets/thunderstorm.png";
+		} else {
+			return "../../../../../assets/clear.png";
 		}
 	}
 }
