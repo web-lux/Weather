@@ -16,6 +16,69 @@ export class CurrentComponent implements OnInit {
 	currentWeather!: Weather;
 	currentMeteo!: string;
 	currentCity!: string;
+	todayDate: string = this.getDate();
+
+	getDate() {
+		const date = new Date();
+		const formatedDate = `
+		${this.parseDay(date.getDay())} ${date.getDate()} ${this.parseMonth(
+			date.getMonth()
+		)}`;
+		console.log(formatedDate);
+		return formatedDate;
+	}
+
+	parseDay(value: number) {
+		switch (value) {
+			case 0:
+				return "Lundi";
+			case 1:
+				return "Mardi";
+			case 2:
+				return "Mercredi";
+			case 3:
+				return "Jeudi";
+			case 4:
+				return "Vendredi";
+			case 5:
+				return "Samedi";
+			case 6:
+				return "Dimanche";
+			default:
+				return "";
+		}
+	}
+
+	parseMonth(value: number) {
+		switch (value) {
+			case 0:
+				return "Janvier";
+			case 1:
+				return "Février";
+			case 2:
+				return "Mars";
+			case 3:
+				return "Avril";
+			case 4:
+				return "Mai";
+			case 5:
+				return "Juin";
+			case 6:
+				return "Juillet";
+			case 7:
+				return "Août";
+			case 8:
+				return "Septembre";
+			case 9:
+				return "Octobre";
+			case 10:
+				return "Novembre";
+			case 11:
+				return "Décembre";
+			default:
+				return "";
+		}
+	}
 
 	async ngOnInit() {
 		this.weatherService.userWeather$.subscribe(async (res) => {

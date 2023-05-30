@@ -1,57 +1,60 @@
-<div class="container" *ngIf="currentWeather">
-	<div class="weather-data">
-		<div class="photo">
-			<!-- l'image change par rapport à l'heure (jour et nuit) -->
-			<img
-				src="../../../../../assets/day.jpg"
-				alt=""
-				*ngIf="currentWeather.current_weather.is_day === 1"
-			/>
-			<img
-				src="../../../../../assets/night.jpg"
-				alt=""
-				*ngIf="currentWeather.current_weather.is_day === 0"
-			/>
-		</div>
-		<div class="infos">
-			<span class="location">{{ currentCity }}</span>
-			<span class="temperature"
-				>{{ currentWeather.current_weather.temperature }}°</span
-			>
-		</div>
+<main class="current-container" *ngIf="currentWeather">
+	<div class="weather">
+		<span class="temperature"
+			>{{ currentWeather.current_weather.temperature }}°C</span
+		>
+		<span class="meteo">{{ currentMeteo }}</span>
 	</div>
-	<div class="details">
-		<div class="details-infos">
-			<img class="icone" src="../../../../../assets/celsius.png" alt="" />
-			<div class="more-infos">
-				<span class="text">Météo</span>
-				<span>{{ currentMeteo }}</span>
+
+	<div class="infos">
+		<span class="city">{{ currentCity }}</span>
+		<span class="date">{{ todayDate }}</span>
+	</div>
+
+	<ul>
+		<li>
+			<div class="label">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="white"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="feather feather-wind"
+				>
+					<path
+						d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"
+					></path>
+				</svg>
+				<span>Vitesse du vent</span>
 			</div>
-		</div>
-		<div class="details-infos">
-			<img class="icone" src="../../../../../assets/wind.png" alt="" />
-			<div class="more-infos">
-				<span class="text">Vitesse du vent</span>
-				<span>{{ currentWeather.current_weather.windspeed }} km/h </span>
-			</div>
-		</div>
-		<div class="details-infos">
-			<img
-				class="icone"
-				src="../../../../../assets/wind-direction.png"
-				alt=""
-			/>
-			<div class="more-infos">
-				<span class="text">Direction du vent</span>
-				<img
-					src="../../../../../assets/arrow.png"
-					alt=""
+			<span>{{ currentWeather.current_weather.windspeed }} km/h</span>
+		</li>
+
+		<li>
+			<div class="label">
+				<svg
+					width="15"
+					height="22"
+					viewBox="0 0 19 26"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
 					[style.transform]="
 						'rotate(' + currentWeather.current_weather.winddirection + 'deg)'
 					"
-				/>
-				<span>{{ currentWeather.current_weather.winddirection }} °</span>
+				>
+					<path
+						d="M2.63471 0.961321C0.844998 0.0651847 -0.0498591 0.865306 0.632485 2.74335L8.39815 24.1021C9.08305 25.9827 10.1904 25.9815 10.874 24.1021L18.6423 2.74335C19.3259 0.864024 18.4298 0.0651823 16.64 0.958759L9.63738 4.46137L2.63471 0.961321Z"
+						fill="white"
+					/>
+				</svg>
+				<span>Direction du vent</span>
 			</div>
-		</div>
-	</div>
-</div>
+			<span>{{ currentWeather.current_weather.winddirection }} °</span>
+		</li>
+	</ul>
+</main>
