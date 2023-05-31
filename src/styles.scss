@@ -228,3 +228,22 @@ app-forecast {
 		align-self: flex-start;
 	}
 }
+
+@media screen and (min-width: 1920px) {
+	app-header,
+	app-current,
+	app-forecast {
+		margin: auto;
+		max-width: 1920px;
+		min-width: 1920px;
+	}
+
+	app-current {
+		align-items: center;
+		justify-content: center;
+	}
+
+	main.current-container {
+		align-self: auto;
+	}
+}
