@@ -12,6 +12,7 @@ export class WeatherApiService {
 			this.getWeather(this.locationService.getUserGeoLocation())
 		);
 
+	/* Utilisé par le composant Form */
 	setUserWeather(weatherObj: any) {
 		this.userWeather$.next(weatherObj);
 	}
@@ -35,6 +36,8 @@ export class WeatherApiService {
 		const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&timezone=auto&daily=temperature_2m_max,temperature_2m_min,weathercode&current_weather=true`;
 		return this.http.get(url);
 	}
+
+	/* Les deux fonctions qui suivent traduisent le weatherCode en quelque chose d'utilisable : soit son équivalent météo en FR ou le chemin de l'image correspondante */
 
 	weatherCodeIntoString(weatherCode: number): string {
 		if (weatherCode === 0) {

@@ -14,11 +14,12 @@ export class CurrentComponent implements OnInit {
 	) {}
 
 	currentWeather!: Weather;
-	currentMeteo!: string;
+	currentMeteo!: string; // Meteo designe le temps en string, ex : "Nuageux, clair"...
 	currentCity!: string;
 	todayDate: string = this.getDate();
 
 	getDate() {
+		// Récupère la date du jour
 		const date = new Date();
 		const formatedDate = `
 		${this.parseDay(date.getDay())} ${date.getDate()} ${this.parseMonth(

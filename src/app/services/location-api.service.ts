@@ -8,7 +8,8 @@ export class LocationApiService {
 	constructor() {}
 
 	citySubject$: BehaviorSubject<Promise<string>> = new BehaviorSubject(
-		this.coordsToCity(this.getUserGeoLocation())
+		/* Récupère la ville au chargement de page */
+		this.coordsToCity(this.getUserGeoLocation()) //
 	);
 
 	setCitySubject(city: Promise<string>) {
@@ -46,12 +47,14 @@ export class LocationApiService {
 		const url = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
 		const json = await fetch(url).then((res) => res.json());
 		if (json.address.city) {
+			/* Selon la taille de la ville, openstreetmap change le nom de la propriété. */
 			return json.address.city;
 		} else {
 			return json.address.town;
 		}
 	}
 
+	/* Utilisé lors de l'utilisation de la barre de recherche de ville */
 	async cityToCoords(city: string): Promise<{
 		coords: { latitude: number; longitude: number };
 	}> {

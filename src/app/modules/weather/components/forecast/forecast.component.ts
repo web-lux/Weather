@@ -12,6 +12,8 @@ export class ForecastComponent implements OnInit {
 	dailyWeather!: any;
 
 	createArray(object: any) {
+		/* Crée un array de 7 objets pour les 7 jours de prévision 
+		météo avec les infos remises au bon endroit */
 		let arr = [];
 		for (let i = 0; i < 7; i++) {
 			arr.push({
