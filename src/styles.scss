@@ -22,7 +22,9 @@ a,
 button,
 span,
 label,
-input {
+input,
+h1,
+p {
 	font-family: "Montserrat", sans-serif;
 }
 
@@ -218,6 +220,24 @@ app-forecast {
 			}
 
 			font-size: 18px;
+		}
+	}
+}
+
+app-not-found {
+	display: flex;
+	flex: 1;
+
+	main.not-found {
+		color: white;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+
+		h1 {
+			font-size: 84px;
 		}
 	}
 }
